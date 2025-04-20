@@ -3,20 +3,20 @@ package com.example.demo.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.example.demo.service.QuestionService; // ✅ Import QuestionService
-import com.example.demo.model.Question; // ✅ Import Question entity
-import java.util.List; // ✅ Import List
+import com.example.demo.service.QuestionService; //  Import QuestionService
+import com.example.demo.model.Question; //  Import Question entity
+import java.util.List; //  Import List
 
 @RestController
 @RequestMapping("/question")
 public class QuestionController {
 
     @Autowired
-    private QuestionService questionService; // ✅ Fixed variable name (camelCase)
+    private QuestionService questionService; //  Fixed variable name (camelCase)
 
     @GetMapping("/allQuestions")
-    public ResponseEntity<List<Question>> getAllQuestions() {  // ✅ Fixed method name
-        return questionService.getAllQuestions();  // ✅ Corrected method call
+    public ResponseEntity<List<Question>> getAllQuestions() {  //  Fixed method name
+        return questionService.getAllQuestions();  //  Corrected method call
     }
     @GetMapping("/category/{category}")
     public ResponseEntity<List<Question>> getQuestionByCategory(@PathVariable String category)
